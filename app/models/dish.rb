@@ -1,5 +1,6 @@
 class Dish < ApplicationRecord
   belongs_to :category
+  has_many :orders, through: :ordered_dishes
 
   validates :title, presence: true,
                     uniqueness: true
