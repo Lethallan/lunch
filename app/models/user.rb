@@ -16,8 +16,6 @@ class User < ApplicationRecord
   private
 
   def check_if_table_is_empty
-    if User.all.empty?
-      current_user.type = 'Admin'
-    end
+    self.type = 'Admin' if User.count == 0
   end
 end
