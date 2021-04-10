@@ -1,11 +1,18 @@
 class UsersController < ApplicationController
   before_action :find_user, only: %i[show edit update]
 
+  def show
+  end
+
   def edit
   end
 
   def update
-    @user.update(user_params)
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else 
+      render :edit
+    end
   end
 
   private
