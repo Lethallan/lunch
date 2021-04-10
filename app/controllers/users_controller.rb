@@ -5,6 +5,11 @@ class UsersController < ApplicationController
   end
 
   def edit
+    if @user == current_user
+      render :edit
+    else
+      redirect_to user_path(@user)
+    end
   end
 
   def update
