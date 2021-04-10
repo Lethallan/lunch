@@ -3,15 +3,15 @@ html
   head
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
     meta charset="utf-8" /
-    meta content="width=device-width,initial-scale=1" name="viewport" /
-    title Lunch service
+    meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" /
+    title Admin Panel | Lunch service
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-    
   body
     header
-      = render 'layouts/nav'
+      = render 'layouts/nav_admin'
     = yield
+

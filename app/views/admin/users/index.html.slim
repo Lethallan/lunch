@@ -1,0 +1,21 @@
+.row.justify-content-center.mt-3
+  .col.col-md-7
+    .card.border-default
+      .card-body
+        h1 style=("text-align: center") All registered users
+
+        - if user_signed_in?
+          table.table.table-striped
+            thead.thead-dark
+              tr
+                th scope="col" Name
+                th scope="col" Email
+                th scope="col" Type
+                th scope="col" Registered at
+                - @users.each do |user|
+                  tr
+                    td scope="row" = user.name
+                    td scope="row" = user.email
+                    td scope="row" = user.type
+                    td scope="row" = user.created_at
+                    

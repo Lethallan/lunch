@@ -8,9 +8,15 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    root to: 'admin/users#index'
+
     resources :users do
-      get :all_users, on: :member
+      get :index, on: :member
+      get :show, on: :member
     end
+
+    resources :dashboards
+    resources :orders
   end
 
   resources :dashboards, only: %i[show]
