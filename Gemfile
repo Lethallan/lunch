@@ -16,8 +16,9 @@ gem 'devise'
 gem 'slim-rails'
 
 gem 'jquery-rails'
-gem 'bootstrap', '~> 4.0'
+gem 'bootstrap'
 gem 'bootstrap-sass'
+gem 'popper_js'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

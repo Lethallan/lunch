@@ -1,0 +1,10 @@
+nav.navbar.navbar-light.bg-light
+  = link_to 'Dashboard', root_path, class: 'navbar-brand'
+  span.navbar-text
+    - if user_signed_in?
+      = link_to 'Order your lunch', root_path, class: 'btn'
+      = link_to 'Your profile', user_path(current_user), class: 'btn'
+      = button_to 'Log out', destroy_user_session_path, class: 'btn-secondary', method: :delete
+    - else
+      = link_to 'Log in', new_user_session_path, class: 'btn'
+      = link_to 'Sign up', new_user_registration_path, class: 'btn'
