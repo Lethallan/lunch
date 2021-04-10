@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :orders, shallow: true, only: %i[index show]
   end
 
+  resources :dishes, only: :show
+
   namespace :admin do
     root to: 'admin/users#index'
 
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
 
     resources :dashboards
     resources :orders
+    resources :dishes, except: :destroy
   end
 
   resources :dashboards, only: %i[show]
