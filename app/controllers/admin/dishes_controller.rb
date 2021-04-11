@@ -36,7 +36,7 @@ class Admin::DishesController < Admin::BaseController
   private
 
   def dish_params
-    params.require(:dish).permit(:title, :description, :price, :category_id)
+    params.require(:dish).permit(:title, :description, :price, :category_id, :picture)
   end
 
   def find_dish

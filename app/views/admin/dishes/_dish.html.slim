@@ -2,4 +2,5 @@ tr
   td scope="row" = link_to truncate(dish.title, length: 20), admin_dish_path(dish)
   td scope="row" = dish.category.title
   td scope="row" = dish.price
+  td scope="row" = image_tag dish.picture_url(:thumb) if dish.picture_url.present?
   td scope="row" = dish.created_at
