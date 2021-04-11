@@ -1,0 +1,12 @@
+.row.justify-content-center.mt-3
+  .col.col-md-2
+    h2 style=("text-align: center")
+      = @dish.title
+    h4 style=("text-align: center")
+      = @dish.price
+    h6 style=("text-align: center")
+      = @dish.description
+    h6 style=("text-align: center")
+      = @dish.created_at
+    h6 style=("text-align: center")
+      = link_to 'Edit this dish', edit_admin_dish_path(@dish), class: 'btn'

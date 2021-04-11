@@ -4,10 +4,10 @@ nav.navbar.navbar-light.bg-light
     = link_to 'View as user', root_path, class: 'navbar-brand'
   span.navbar-text
     - if user_signed_in? && current_user.type == 'Admin'
-      = link_to 'Order your lunch', root_path, class: 'btn'
       = link_to 'Your profile', user_path(current_user), class: 'btn'
-      = link_to 'All users', root_path, class: 'btn'
+      = link_to 'All users', admin_users_path, class: 'btn'
       = link_to 'All orders', root_path, class: 'btn'
+      = link_to 'Manage dishes', admin_dishes_path, class: 'btn'
       = button_to 'Log out', destroy_user_session_path, class: 'btn-secondary', method: :delete
     - else
       = link_to 'Log in', new_user_session_path, class: 'btn'

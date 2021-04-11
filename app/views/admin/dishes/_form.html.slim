@@ -1,0 +1,22 @@
+.form-group
+  = form_with model: [:admin, @dish], local: true do |f|
+    = f.hidden_field :user_id, :value => current_user.id
+    p
+      = f.label :title
+      br/
+      = f.text_field :title, id: :dish_title, class: 'form-control'
+    p
+      = f.label :category
+      br/
+      = f.collection_select :category_id, Category.all, :id, :title, prompt: true, class: 'form_control'
+
+    p
+      = f.label :description, 'Description'
+      br/
+      = f.text_area :description, id: :dish_description, class: 'form-control'
+    p
+      = f.label :price
+      br/
+      = f.number_field :price, id: :dish_price, class: 'form-control'
+    p
+      = f.submit 'Submit', class: 'btn btn-primary'

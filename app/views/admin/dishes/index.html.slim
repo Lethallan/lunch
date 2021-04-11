@@ -1,0 +1,17 @@
+.row.justify-content-center.mt-3
+  .col.col-md-7
+    .card.border-default
+      .card-body
+        h1 style=("text-align: center") Dishes list
+
+        - if user_signed_in?
+          h5 style=("text-align: center") = link_to 'New dish', new_admin_dish_path
+
+        table.table.table-striped
+          thead.thead-dark
+            tr
+              th scope="col" Dish title
+              th scope="col" Category
+              th scope="col" Price
+              th scope="col" Date of creation
+              = render @dishes
