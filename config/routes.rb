@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'dashboards#show'
+  root to: 'dashboards#index'
 
   devise_for :users, path_names: {sign_in: :login, sign_out: :logout}
 
@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :dishes, only: :show
+  resources :dashboards, only: :show
 
   namespace :admin do
     root to: 'admin/users#index'
@@ -22,5 +23,5 @@ Rails.application.routes.draw do
     resources :dishes, except: :destroy
   end
 
-  resources :dashboards, only: %i[show]
+  resources :dashboards, only: %i[index]
 end
