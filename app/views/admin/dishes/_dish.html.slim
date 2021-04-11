@@ -1,0 +1,4 @@
+tr
+  td scope="row" = link_to truncate(dish.title, length: 20), admin_dish_path(dish)
+  td scope="row" = dish.price
+  td scope="row" = dish.created_at
