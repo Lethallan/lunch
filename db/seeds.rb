@@ -27,6 +27,19 @@ User.create!(
   [
     {name: 'Bilbo Baggins', email: 'bilbo_b@bla.com', password: '123456'},
     {name: 'Smeagol', email: 'gollum_gollum@bla.com', password: '123456'},
-    {name: 'Gandalf the Grey', email: 'gandalf_wizard@bla.com', password: '123456'}
+    {name: 'Gandalf the Grey', email: 'gandalf_wizard@bla.com', password: 'youshallnotpass'}
   ]
 )
+
+# order = current_user.orders.new
+# dish_1 = Dish.find params[:dish_2_id]
+# dish_2 = Dish.find params[:dish_2_id]
+
+# order.dishes.push(dish_1, dish_2)
+# order.total_price = order.dishes.inject(0) { |sum, dish| sum + dish.price }
+
+# if order.save
+#   redirect_to root_path
+# else
+#   render :new
+# end
