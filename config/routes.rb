@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   end
 
   resources :dishes, only: :show
-  resources :dashboards, only: :show
 
   namespace :admin do
     root to: 'admin/users#index'
