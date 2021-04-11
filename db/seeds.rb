@@ -16,7 +16,7 @@ Dish.create!(
     { title: 'Tomato soup', description: 'only fresh tomatoes', price: 140, category_id: 1},
     { title: 'Gulash', description: 'What is it?', price: 99, category_id: 1},
     { title: 'Okroshka', description: 'I thought it was a salad', price: 135, category_id: 1},
-    { title: 'Mint tea', description: 'or mint with tea', price: 90, category_id: 3},
+    { title: 'Tea with mint', description: 'or mint with tea', price: 90, category_id: 3},
     { title: 'Green tea', description: 'the greenest of the green teas', price: 90, category_id: 3},
     { title: 'Coffee Latte', description: 'my favourite', price: 150, category_id: 3},
     { title: 'Matcha Latte', description: 'Not tea, not coffe...', price: 89, category_id: 3}
