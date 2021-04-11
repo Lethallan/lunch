@@ -19,4 +19,9 @@
       br/
       = f.number_field :price, id: :dish_price, class: 'form-control'
     p
+      = f.label :picture
+      br/
+      = f.file_field :picture
+
+    p
       = f.submit 'Submit', class: 'btn btn-primary'
