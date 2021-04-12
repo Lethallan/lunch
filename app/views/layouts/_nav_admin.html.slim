@@ -6,7 +6,7 @@ nav.navbar.navbar-light.bg-light
     - if user_signed_in? && current_user.type == 'Admin'
       = link_to 'Your profile', user_path(current_user), class: 'btn'
       = link_to 'All users', admin_users_path, class: 'btn'
-      = link_to 'All orders', root_path, class: 'btn'
+      = link_to 'All orders', admin_orders_path, class: 'btn'
       = link_to 'Manage dishes', admin_dishes_path, class: 'btn'
       = button_to 'Log out', destroy_user_session_path, class: 'btn-secondary', method: :delete
     - else
