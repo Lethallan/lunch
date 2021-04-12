@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :dish do
-    title { "MyString" }
-    description { "MyText" }
-    price { 10 }
+    title { "Sweetroll"}
+    description { "very sweet roll" }
+    price { 100 }
     category { create(:category) }
 
     trait :wrong do

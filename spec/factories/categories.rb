@@ -1,6 +1,10 @@
 FactoryBot.define do
+  sequence :title do |n|
+    "Category#{n}"
+  end
+
   factory :category do
-    title { "Category title" }
+    title
 
     trait :wrong do
       title { nil }
