@@ -1,7 +1,7 @@
 class Dish < ApplicationRecord
   belongs_to :category
-  has_many :orders, through: :ordered_dishes
   has_many :ordered_dishes
+  has_many :orders, through: :ordered_dishes
 
   scope :by_category, -> (category_id) { where(category_id: category_id) }
 

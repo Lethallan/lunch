@@ -1,5 +1,9 @@
 FactoryBot.define do
   factory :category do
-    title { "MyString" }
+    title { "Category title" }
+
+    trait :wrong do
+      title { nil }
+    end
   end
 end
