@@ -1,0 +1,16 @@
+.form-group
+  = form_with model: [:user, @order], local: true do |f|
+    = f.hidden_field :user_id, :value => current_user.id
+    = f.hidden_field :date, :value => params[:date]
+
+    p
+      = f.label 'First course'
+      = f.collection_select :first_course, Category.find(1).dishes, :id, :title, class: 'form_control'
+    p
+      = f.label 'Main course'
+      = f.collection_select :main_course, Category.find(2).dishes, :id, :title, class: 'form_control'
+    p
+      = f.label 'Drink'
+      = f.collection_select :drink, Category.find(3).dishes, :id, :title, class: 'form_control'
+
+    p = f.submit 'Submit', class: 'btn btn-primary'

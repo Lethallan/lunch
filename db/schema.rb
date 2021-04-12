@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_11_155916) do
+ActiveRecord::Schema.define(version: 2021_04_11_233038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,11 +34,11 @@ ActiveRecord::Schema.define(version: 2021_04_11_155916) do
 
   create_table "ordered_dishes", force: :cascade do |t|
     t.bigint "dish_id", null: false
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "order_id", null: false
     t.index ["dish_id"], name: "index_ordered_dishes_on_dish_id"
-    t.index ["user_id"], name: "index_ordered_dishes_on_user_id"
+    t.index ["order_id"], name: "index_ordered_dishes_on_order_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_04_11_155916) do
     t.float "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "perform_at"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -66,6 +67,6 @@ ActiveRecord::Schema.define(version: 2021_04_11_155916) do
 
   add_foreign_key "dishes", "categories"
   add_foreign_key "ordered_dishes", "dishes"
-  add_foreign_key "ordered_dishes", "users"
+  add_foreign_key "ordered_dishes", "orders"
   add_foreign_key "orders", "users"
 end

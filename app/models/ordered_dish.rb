@@ -1,4 +1,4 @@
 class OrderedDish < ApplicationRecord
   belongs_to :dish
-  belongs_to :user
+  belongs_to :order
 end

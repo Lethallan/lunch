@@ -1,31 +1,28 @@
 class OrdersController < ApplicationController
-  before_action :find_order only: %i[show]
-
-  def show
-  end
-
   def new
-    @order = Order.new
+    @order = current_user.orders.new
   end
 
   def create
-    # @order = Order.new(order_params)
-    # current_user.orders.new(order_params)
+    @order = OrdersService.new(order_params).call
 
-    # if @order.save
-    #   redirect_to @order
-    # else 
-    #   render :new
-    # end
+    if @order.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
 
-  def find_order
-  #   @order = Order.find(params[:id])
-  # end
-
-  # def order_params
-  #   params.require(:order).permit
-  # end
+  def order_params
+    params.require(:order)
+          .permit(
+            :user_id,
+            :first_course,
+            :main_course,
+            :drink,
+            :date
+          )
+  end
 end

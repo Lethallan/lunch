@@ -5,6 +5,7 @@
         h1 style=("text-align: center") Dishes list
 
         - 7.times.each_with_index do |day, index|
+          = link_to 'New order', new_user_order_path(current_user.id, date: Date.today + index.days), class: 'btn btn-primary'
           table.table.table-striped
             thead.thead-dark
               h2 = "#{(Date.today + index.days).strftime('%A')} - #{(Date.today + index.days)}"

@@ -3,6 +3,8 @@ class Dish < ApplicationRecord
   has_many :orders, through: :ordered_dishes
   has_many :ordered_dishes
 
+  scope :by_category, -> (category_id) { where(category_id: category_id) }
+
   mount_uploader :picture, DishPicturesUploader
 
   validates :title, presence: true,

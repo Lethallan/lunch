@@ -1,0 +1,13 @@
+h3 Orders of the day
+table.table.table-striped
+  thead.thead-dark
+      tr
+        th scope="col" Order id
+        th scope="col" User id
+        th scope="col" User name
+        th scope="col" User email
+        th scope="col" Total price
+        th scope="col" Date
+        = render @orders
+h3 Total cost
+h4 = @total_cost
