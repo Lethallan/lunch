@@ -20,6 +20,8 @@ gem 'bootstrap'
 gem 'bootstrap-sass'
 gem 'popper_js'
 
+gem 'rexml'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-byebug'
