@@ -2,12 +2,11 @@ require 'rails_helper'
 
 RSpec.describe DashboardsController, type: :controller do
   describe 'GET index' do
+    let(:user) { create(:user) }
     let(:dishes) { create_list(:dish, 3) }
 
     before do 
-      @user = create(:user)
-      sign_in @user
-
+      sign_in user
       get :index
     end
 
