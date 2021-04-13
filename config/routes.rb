@@ -8,6 +8,13 @@ Rails.application.routes.draw do
   end
 
   resources :dishes, only: :show
+  resources :dashboards, only: %i[index]
+
+  namespace :api do
+    namespace :v1 do
+      resources :orders, only: :index
+    end
+  end
 
   namespace :admin do
     root to: 'admin/users#index'
@@ -21,6 +28,4 @@ Rails.application.routes.draw do
     resources :orders
     resources :dishes, except: :destroy
   end
-
-  resources :dashboards, only: %i[index]
 end
